@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
   def new
@@ -10,7 +11,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.crdate!(post_params)
+    post = Post.create!(post_params)
     redirect_to post
   end
 
