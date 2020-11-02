@@ -24,7 +24,7 @@ class PostsController < ApplicationController
 
   def update
     @post.update!(post_params)  #@を追加
-    redirect_to post
+    redirect_to @post
   end
 
   def destroy
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
   private
 
   def set_post
-    @post = Post.find(prams[:id])
+    @post = Post.find(params[:id])
   end
 
   def post_params
