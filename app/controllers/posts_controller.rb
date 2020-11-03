@@ -19,7 +19,9 @@ class PostsController < ApplicationController
       redirect_to post, notice: "投稿しました"
     else
       flash.now[:alert] = "投稿に失敗しました"
+      #flash[:alert] = "投稿に失敗しました"    #フラッシュがレンダー後も残ってしまう
       render :new
+      #redirect_to action: :new   #入力した文字が消えてしまう
     end
     #redirectとflashをまとめて書く
     #redirect_to post, notice: "投稿しました"
